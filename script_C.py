@@ -1,24 +1,26 @@
+
+
 import matplotlib.pyplot as plt
 import numpy as np
 
 # import data
-# randomly generated country and year: Hong Kong, 1985
-data = np.genfromtxt('data/data_B.csv', delimiter=',')
-# countries closest to Hong Kong in 1985
+# randomly generated year for Poland: 1971
+data = np.genfromtxt('data/data_C.csv', delimiter=',')
+# countries closest to Poland in 1971
 # ascending order in terms of population
-labels = ['South Sudan', 'Denmark', 'Slovak Republic', 'Guinea', 'Hong Kong']
+labels = ['Poland', 'Korea, Rep.', 'Spain', 'Egypt, Arab Rep.', 'Turkey']
 
 def plot(population, labels, year, colors):
     # build the plot
     fig, ax = plt.subplots()
 
     index = np.arange(len(labels))
-    index_y = np.arange(10)*1500000
+    index_y = np.arange(11)*10000000
     labels_y = []
     for i in range(len(index_y)):
-        labels_y.append(np.round((i)*1.5,1))
+        labels_y.append(np.round((i)*10,1))
 
-    plt.text(0.75, 12500000.0, str(year), size=30,
+    plt.text(0.75, 93000000.0, str(year), size=30,
              ha="right", va="top",
              bbox=dict(boxstyle="square",
                        ec=(1., 0.5, 0.5),
@@ -30,11 +32,11 @@ def plot(population, labels, year, colors):
     plt.ylabel('Population [million]')
     plt.xticks(index, labels, rotation=45)
     plt.title('Evolution of the populations of countries that were the most \n' +
-              'similar population-wise to Hong Kong in 1984')
+              'similar population-wise to Poland in 1971')
     plt.yticks(index_y, labels_y)
-    plt.ylim(0, 14000000)
+    plt.ylim(0, 105000000)
     plt.tight_layout()
-    plt.savefig('B/' + str(year)  + '.png')
+    plt.savefig('C/' + str(year)  + '.png')
     plt.close(fig)
 
 # lists for sorting plot bars in ascending order

@@ -10,7 +10,6 @@ labels = ['China', 'India', 'United States', 'Russian Federation', 'Japan']
 def plot(population, labels, year, colors):
     # build the plot
     fig, ax = plt.subplots()
-    print(year)
 
     index = np.arange(len(labels))
     index_y = np.arange(8)*200000000
