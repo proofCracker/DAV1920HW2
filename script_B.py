@@ -37,12 +37,14 @@ def plot(population, labels, year, colors):
     plt.savefig('B/' + str(year)  + '.png')
     plt.close(fig)
 
-# lists for sorting plot bars in ascending order
+# sorting plot bars in ascending order
 colors = ['dodgerblue', 'orchid', 'green', 'darkorange', 'brown']
+
 last_index = len(data[0]) - 1
 last_input = []
 for i in range(5):
-    last_input.append(data[i][last_index])
+    last_input.append(data[i][58])
+
 indices = [] # order of bars in the plot
 indices = np.argsort(last_input)
 
