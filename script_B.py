@@ -29,7 +29,7 @@ def plot(population, labels, year, colors):
     plt.bar(index, population, color=colors)
     plt.ylabel('Population [million]')
     plt.xticks(index, labels, rotation=45)
-    plt.title('Evolution of the populations of countries that were the most \n' +
+    plt.title('The evolution of populations of countries that were most \n' +
               'similar population-wise to Hong Kong in 1984')
     plt.yticks(index_y, labels_y)
     plt.ylim(0, 14000000)

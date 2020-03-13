@@ -28,7 +28,7 @@ def plot(population, labels, year, colors):
     plt.bar(index, population, color=colors)
     plt.ylabel('Population [billion]')
     plt.xticks(index, labels, rotation=45)
-    plt.title('Evolution of the populations of the most populous countries in 1960')
+    plt.title('The evolution of populations of most populous countries in 1960')
     plt.yticks(index_y, labels_y)
     plt.ylim(0, 1500000000)
     plt.tight_layout()
