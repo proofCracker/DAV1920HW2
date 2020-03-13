@@ -39,25 +39,30 @@ def plot(population, labels, year, colors):
 
 # lists for sorting plot bars in ascending order
 colors = ['dodgerblue', 'orchid', 'green', 'darkorange', 'brown']
-population = []
-indices = []
+last_index = len(data[0]) - 1
+last_input = []
+for i in range(5):
+    last_input.append(data[i][last_index])
+indices = [] # order of bars in the plot
+indices = np.argsort(last_input)
+
 sorted_pop = []
 sorted_lab = []
 sorted_col = []
 
+for i in range(len(indices)):
+    sorted_lab.append(labels[indices[i]])
+    sorted_col.append(colors[indices[i]])
+
+population = []
+
 for i in range(59):
     for j in range(5):
         population.append(data[j][i])
-
-    indices = np.argsort(population)
     for k in range(len(indices)):
         sorted_pop.append(population[indices[k]])
-        sorted_lab.append(labels[indices[k]])
-        sorted_col.append(colors[indices[k]])
 
     plot(sorted_pop, sorted_lab, i+1960, sorted_col)
 
     population = []
     sorted_pop = []
-    sorted_lab = []
-    sorted_col = []
